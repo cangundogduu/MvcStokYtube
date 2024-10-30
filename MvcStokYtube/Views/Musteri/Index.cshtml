@@ -1,0 +1,27 @@
+﻿@using MvcStokYtube.Models.Entity
+@model List<TBLMUSTERILER>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>MÜŞTERİ ID</th>
+        <th>MÜŞTERİ ADI</th>
+        <th>MÜŞTERİ SOYADI</th>
+
+    </tr>
+
+ <tbody>
+        @foreach (var mstr in Model)
+        {
+        <tr>
+            <th>@mstr.MUSTERIID</th>
+            <td>@mstr.MUSTERIAD</td>
+            <td>@mstr.MUSTERISOYAD</td>
+        </tr>
+
+    }
+ </tbody>
+</table>
