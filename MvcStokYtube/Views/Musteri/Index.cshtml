@@ -10,6 +10,9 @@
         <th>MÜŞTERİ ID</th>
         <th>MÜŞTERİ ADI</th>
         <th>MÜŞTERİ SOYADI</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+
 
     </tr>
 
@@ -20,8 +23,11 @@
             <th>@mstr.MUSTERIID</th>
             <td>@mstr.MUSTERIAD</td>
             <td>@mstr.MUSTERISOYAD</td>
+            <td><a href="/Musteri/Sil/@mstr.MUSTERIID" class="btn btn-danger">Sil</a> </td>
+            <td><a href="/Musteri/Guncelle/@mstr.MUSTERIID" class="btn btn-success">Güncelle</a> </td>
         </tr>
 
     }
  </tbody>
 </table>
+<a href="/Musteri/YeniMusteri/" class="btn btn-info">Yeni Müşteri Ekle</a>

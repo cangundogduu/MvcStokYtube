@@ -239,6 +239,8 @@
     <Content Include="Views\Category\Index.cshtml" />
     <Content Include="Views\Urun\Index.cshtml" />
     <Content Include="Views\Musteri\Index.cshtml" />
+    <Content Include="Views\Category\NewCategory.cshtml" />
+    <Content Include="Views\Musteri\YeniMusteri.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

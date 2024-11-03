@@ -12,7 +12,9 @@
         <th>URUN MARKASI</th>
         <th>URUN KATEGORİSİ</th>
         <th>URUN FİYATI</th>
-        <th>SYOK ADEDİ</th>
+        <th>StOK ADEDİ</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
 
     </tr>
     <tbody>
@@ -22,13 +24,15 @@
                 <th>@urn.URUNID</th>
                 <td>@urn.URUNAD</td>
                 <td>@urn.MARKA</td>
-                <td>@urn.UNURKATEGORI</td>
+                <td>@urn.TBLKATEGORILER.KATEGORIAD</td>
                 <td>@urn.FIYAT</td>
                 <td>@urn.STOK</td>
+                <td><a href="/Urun/Sil/@urn.URUNID" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Urun/Guncelle/@urn.URUNID" class="btn btn-success">Güncelle</a></td>
 
             </tr>
         }
 
     </tbody>
 </table>
-
+<a href="/Urun/NewCategory/" class="btn btn-info">Yeni Ürün Ekle</a>

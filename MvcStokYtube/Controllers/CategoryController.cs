@@ -16,5 +16,18 @@ namespace MvcStokYtube.Controllers
             var degerler=db.TBLKATEGORILER.ToList();
             return View(degerler);
         }
+        [HttpGet]
+        public ActionResult NewCategory() 
+        {
+        return View();  
+        }
+        
+        [HttpPost]
+        public ActionResult NewCategory(TBLKATEGORILER ktgr) 
+        { 
+            db.TBLKATEGORILER.Add(ktgr);
+            db.SaveChanges();
+            return View();
+        }
     }
 }

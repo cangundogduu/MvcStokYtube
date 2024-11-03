@@ -1,0 +1,21 @@
+﻿@model MvcStokYtube.Models.Entity.TBLMUSTERILER
+@{
+    ViewBag.Title = "YeniMusteri";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form methed="post">
+    <div>
+        <label>Müşteri Adı</label>
+        <input type="text" class="form-control" name="MUSTERIAD" />
+    </div>
+    <div>
+        <label>Müşteri Soyadı</label>
+        <input type="text" class="form-control" name="MUSTERISOYAD" />
+    </div>
+    <div>
+        <button class="btn btn-info">Müşteri Ekle</button>
+    
+    </div>
+</form>
+
