@@ -1,0 +1,32 @@
+﻿@model MvcStokYtube.Models.Entity.TBLKATEGORILER
+@{
+    ViewBag.Title = "UrunEkle";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form method="post">
+    <div>
+        <label>Ürün Adı</label>
+        <input type="text" class="form-control" name="URUNAD" />
+    </div>
+    <div>
+        <label>Marka</label>
+        <input type="text" class="form-control" name="MARKA" />
+    </div>
+    <div>
+        <label>Ürün Kategorisi</label>
+        @Html.DropDownListFor(m => m.KATEGORIAD,(List<SelectListItem>)ViewBag.dgr,new {@class="form-control"})
+    </div>
+    <div>
+        <label>Ürün Fiyatı</label>
+        <input type="text" class="form-control" name="FIYAT" />
+    </div>
+    <div>
+        <label>Stok Adedi</label>
+        <input type="text" class="form-control" name="STOK" />
+    </div>
+    <div>
+        <button class="btn btn-info" style=margin-top:25px >Ürün Ekle</button>
+
+    </div>
+</form>
