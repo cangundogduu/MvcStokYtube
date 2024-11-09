@@ -19,9 +19,11 @@ namespace MvcStokYtube.Controllers
         [HttpPost]
         public ActionResult UrunEkle(TBLURUNLER urn)
         {
+            var ktgr= db.TBLKATEGORILER.Where(m=> m.KATEGORIID==urn.TBLKATEGORILER.KATEGORIID).FirstOrDefault();
+            urn.TBLKATEGORILER = ktgr;
             db.TBLURUNLER.Add(urn);
             db.SaveChanges();
-            return View();
+            return RedirectToAction("Index");
         }
 
         [HttpGet]

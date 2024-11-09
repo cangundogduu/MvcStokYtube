@@ -1,8 +1,10 @@
-﻿@model MvcStokYtube.Models.Entity.TBLKATEGORILER
+﻿@model MvcStokYtube.Models.Entity.TBLURUNLER
 @{
     ViewBag.Title = "UrunEkle";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
+
+<h4>Ürün Ekleme Alanı</h4>
 
 <form method="post">
     <div>
@@ -15,7 +17,7 @@
     </div>
     <div>
         <label>Ürün Kategorisi</label>
-        @Html.DropDownListFor(m => m.KATEGORIAD,(List<SelectListItem>)ViewBag.dgr,new {@class="form-control"})
+        @Html.DropDownListFor(m => m.TBLKATEGORILER.KATEGORIID,(List<SelectListItem>)ViewBag.dgr,new {@class="form-control"})
     </div>
     <div>
         <label>Ürün Fiyatı</label>
