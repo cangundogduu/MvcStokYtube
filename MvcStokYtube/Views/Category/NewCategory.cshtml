@@ -1,4 +1,4 @@
-﻿
+﻿@model MvcStokYtube.Models.Entity.TBLKATEGORILER
 @{
     ViewBag.Title = "NewCategory";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
@@ -8,9 +8,15 @@
 
 <form class="form-group" method="post">
     <div>
-    <label>Kategori Adı</label>
+    @*<label>Kategori Adı</label>
     <input type="text" class="form-control" name="KATEGORIAD" />
-    </div>
+    </div>*@
+
+        <div>
+            <label>Kategori Adı</label>
+            @Html.TextBoxFor(k=>k.KATEGORIAD, new {@class="form-control"})
+            @Html.ValidationMessageFor(m=>m.KATEGORIAD,"", new {style="color:red"})
+        </div>
     <div style="margin-top:25px">
         <button class="btn btn-info">Kategori Ekle</button>
     </div>

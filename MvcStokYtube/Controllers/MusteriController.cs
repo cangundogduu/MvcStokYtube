@@ -25,9 +25,38 @@ namespace MvcStokYtube.Controllers
         [HttpPost]
         public ActionResult YeniMusteri(TBLMUSTERILER p1)
         {
+            if (!ModelState.IsValid) 
+            {
+                return View();
+            }
+
             db.TBLMUSTERILER.Add(p1);
             db.SaveChanges();  
-            return View();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Sil(int id)
+        {
+            var deger= db.TBLMUSTERILER.Find(id);
+            db.TBLMUSTERILER.Remove(deger);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult MusteriGetir(int id) 
+        {
+            var mstr = db.TBLMUSTERILER.Find(id);
+            return View("MusteriGetir",mstr);
+        
+        }
+
+        public ActionResult Guncelle(TBLMUSTERILER mstr)
+        {
+            var musteri = db.TBLMUSTERILER.Find(mstr.MUSTERIID);
+            musteri.MUSTERIAD=mstr.MUSTERIAD;
+            musteri.MUSTERISOYAD=mstr.MUSTERISOYAD;
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

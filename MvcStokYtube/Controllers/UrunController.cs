@@ -38,5 +38,13 @@ namespace MvcStokYtube.Controllers
             ViewBag.dgr=degerler;
             return View();
         }
+
+        public ActionResult Sil(int id)
+        {
+            var deger = db.TBLURUNLER.Find(id);
+            db.TBLURUNLER.Remove(deger);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
