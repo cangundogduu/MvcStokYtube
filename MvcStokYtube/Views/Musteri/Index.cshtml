@@ -12,6 +12,7 @@
         <th>MÜŞTERİ SOYADI</th>
         <th>Sil</th>
         <th>Güncelle</th>
+        <th>Alert</th>
 
 
     </tr>
@@ -25,6 +26,7 @@
             <td>@mstr.MUSTERISOYAD</td>
             <td><a href="/Musteri/Sil/@mstr.MUSTERIID" class="btn btn-danger">Sil</a> </td>
             <td><a href="/Musteri/MusteriGetir/@mstr.MUSTERIID" class="btn btn-success">Güncelle</a> </td>
+            <td>@Html.ActionLink("Sil Butonu", "Sil", new {id=mstr.MUSTERIID},new {@class="btn btn-warning",onclick="return confirm('Silme işlemine onay veriyor musunuz?')"})</td>
         </tr>
 
     }

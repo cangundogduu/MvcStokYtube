@@ -1,5 +1,7 @@
 ﻿@using MvcStokYtube.Models.Entity
-@model List<TBLKATEGORILER>
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<TBLKATEGORILER>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
@@ -27,5 +29,7 @@
 
     </tbody>
 </table>
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new {sayfa}))
+
 <a href="/Category/NewCategory/" class="btn btn-info">Yeni Kategori Ekle</a>
 

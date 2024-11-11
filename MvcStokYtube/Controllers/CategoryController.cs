@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MvcStokYtube.Models.Entity;
+using PagedList;
+using PagedList.Mvc;
 
 namespace MvcStokYtube.Controllers
 {
@@ -11,9 +13,11 @@ namespace MvcStokYtube.Controllers
     {
         
         MvcDbStokEntities db=new MvcDbStokEntities();
-        public ActionResult Index()
+        public ActionResult Index(int sayfa=1)
         {
-            var degerler=db.TBLKATEGORILER.ToList();
+
+            //var degerler=db.TBLKATEGORILER.ToList();
+            var degerler = db.TBLKATEGORILER.ToList().ToPagedList(sayfa, 4);
             return View(degerler);
         }
 
