@@ -5,18 +5,24 @@
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
+
+@using (Html.BeginForm("Index", "Musteri", FormMethod.Get))
+            {
+               <p>
+                   Aranacak Müşteri Adı: @Html.TextBox("p")
+                   <input type="submit" value="Ara"/>
+               </p> 
+            }
+
 <table class="table table-bordered">
-    <tr>
-        <th>MÜŞTERİ ID</th>
-        <th>MÜŞTERİ ADI</th>
-        <th>MÜŞTERİ SOYADI</th>
-        <th>Sil</th>
-        <th>Güncelle</th>
-        <th>Alert</th>
-
-
-    </tr>
-
+        <tr>
+            <th>MÜŞTERİ ID</th>
+            <th>MÜŞTERİ ADI</th>
+            <th>MÜŞTERİ SOYADI</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+            <th>Alert</th>
+        </tr>
  <tbody>
         @foreach (var mstr in Model)
         {
@@ -26,10 +32,11 @@
             <td>@mstr.MUSTERISOYAD</td>
             <td><a href="/Musteri/Sil/@mstr.MUSTERIID" class="btn btn-danger">Sil</a> </td>
             <td><a href="/Musteri/MusteriGetir/@mstr.MUSTERIID" class="btn btn-success">Güncelle</a> </td>
-            <td>@Html.ActionLink("Sil Butonu", "Sil", new {id=mstr.MUSTERIID},new {@class="btn btn-warning",onclick="return confirm('Silme işlemine onay veriyor musunuz?')"})</td>
+            <td>@Html.ActionLink("Sil Butonu", "Sil", new { id = mstr.MUSTERIID }, new { @class = "btn btn-warning", onclick = "return confirm('Silme işlemine onay veriyor musunuz?')" })</td>
         </tr>
 
-    }
+            }
  </tbody>
 </table>
 <a href="/Musteri/YeniMusteri/" class="btn btn-info">Yeni Müşteri Ekle</a>
+
